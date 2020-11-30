@@ -12,7 +12,7 @@ const bookshelves = [
 ];
 class BooksApp extends React.Component {
   state = {
-     books: []
+     books: [],
   };
 
   componentDidMount() {
@@ -26,6 +26,7 @@ class BooksApp extends React.Component {
     
     BooksAPI.update(book, shelf).then(books=>console.log(books ,shelf))  
   }
+  
   render() {
     
     return (
@@ -41,7 +42,9 @@ class BooksApp extends React.Component {
             />
           )}
         />
-        <Route path="/search" component={BooksSearch} />
+        <Route path="/search" render={()=>(
+        <BooksSearch onChangeShelf={this.onChangeShelf}/>
+        )} />
       </div>
     );
   }

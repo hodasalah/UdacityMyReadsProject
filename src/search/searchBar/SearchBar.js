@@ -2,12 +2,12 @@ import React from "react";
 import CloseSearchButton from "./CloseSearchButton";
 import InputSearch from "./InputSearch";
 
-const SearchBar = () => {
-  
+const SearchBar = (props) => {
+    
     return (
       <div className="search-books-bar">
         <CloseSearchButton />
-        <InputSearch />
+        <InputSearch getBooks={props.getBooks}/>
       </div>
     );
   
