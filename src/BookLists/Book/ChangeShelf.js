@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 
 export default class ChangeShelf extends Component {
     state={
-        shelf: ""
+        shelf: "none"
     }
-    handleChange=e=>{
-        this.setState({shelf:e.target.value}) 
-        this.props.onShelf(this.props.book ,e.target.value)
-           
+    handleChange=e=>{   
+        this.props.onShelf(this.props.book ,e.target.value)    
     }
     render() {
         return (
