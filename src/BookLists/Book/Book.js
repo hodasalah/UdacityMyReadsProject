@@ -8,7 +8,7 @@ const Book = (props) => {
     if(!book.imageLinks.thumbnail || book.imageLinks.thumbnail===undefined){
       background=`url(./bg.png)`;
     }
-  console.log(background);
+  
   return (
     <li>
       <div className="book">

@@ -5,7 +5,6 @@ const BooksShelf=(props)=> {
   
     const {shelf , books ,onChangeShelf} = props;
     const shelvesBooks = books.filter(book=>(book.shelf === shelf.id))
-    console.log(shelvesBooks);
   return (
     <div className="bookshelf">
       <h2 className="bookshelf-title">{shelf.name}</h2>

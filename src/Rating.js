@@ -3,8 +3,6 @@ import {FaStar} from 'react-icons/fa'
 
 function Rating(props){
     const [rating , setRating] = useState(0);
-    
-    console.log(props.book)
     const [hover , setHover] = useState(0)
     return (
         <div>
