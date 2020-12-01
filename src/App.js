@@ -4,6 +4,7 @@ import * as BooksAPI from "./BooksAPI";
 import "./App.css";
 import BooksLists from "./BookLists/BooksLists";
 import BooksSearch from "./search/BooksSearch";
+import Nav from "./Nav";
 
 const bookshelves = [
   { id: "currentlyReading", name: "Currently Reading"},
@@ -31,6 +32,7 @@ class BooksApp extends React.Component {
     
     return (
       <div className="app">
+        
         <Route
           exact
           path="/"

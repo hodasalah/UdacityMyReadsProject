@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "../../Rating";
 import ChangeShelf from './ChangeShelf';
 
 const Book=(props)=> {
@@ -23,6 +24,7 @@ const Book=(props)=> {
           </div>
           <div className="book-title">{book.title}</div>
           <div className="book-authors">{book.authors}</div>
+          <Rating book={book}/>
         </div>
       </li>
     ): ''}
