@@ -3,11 +3,14 @@ import {FaStar} from 'react-icons/fa'
 
 function Rating(props){
     const [rating , setRating] = useState(0);
+    
+    console.log(props.book)
     const [hover , setHover] = useState(0)
     return (
         <div>
             {[...Array(5)].map((star,i)=>{
                 const Rval = i+1
+                props.book.myRate = rating;
                 return (
                     <label key={Rval}>
                         <input type="radio" 

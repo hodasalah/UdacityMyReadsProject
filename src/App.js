@@ -4,7 +4,7 @@ import * as BooksAPI from "./BooksAPI";
 import "./App.css";
 import BooksLists from "./BookLists/BooksLists";
 import BooksSearch from "./search/BooksSearch";
-import Nav from "./Nav";
+
 
 const bookshelves = [
   { id: "currentlyReading", name: "Currently Reading"},
@@ -20,6 +20,7 @@ class BooksApp extends React.Component {
     BooksAPI.getAll().then(books=>this.setState({books}))
   }
   onChangeShelf = (book, shelf) => {
+    
     book.shelf = shelf;
     this.setState(currState => ({
       books: currState.books.filter(b => b.id !== book.id).concat([book])
