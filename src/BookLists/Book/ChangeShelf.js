@@ -1,23 +1,31 @@
-import React, { Component } from 'react'
+import React from "react";
 
-export default class ChangeShelf extends Component {
-    state={
-        shelf: "none"
+const ChangeShelf = (props) => {
+  const { onShelf, books, book } = props;
+  const handleChange = (e) => {
+    onShelf(this.props.book, e.target.value);
+  };
+
+  let currentShelf = "none";
+  for (let item of books) {
+    if (item.id === book.id) {
+      currentShelf = item.shelf;
+      break;
     }
-    handleChange=e=>{   
-        this.props.onShelf(this.props.book ,e.target.value)    
-    }
-    render() {
-        return (
-            <div className="book-shelf-changer">
-                <select value={this.state.shelf} onChange={(e)=>this.handleChange(e)}>
-                    <option value="move" disabled>Move to...</option>
-                    <option value="currentlyReading">Currently Reading</option>
-                    <option value="wantToRead">Want to Read</option>
-                    <option value="read">Read</option>
-                    <option value="none">None</option>
-                </select>
-            </div>
-        )
-    }
-}
+  }
+
+  return (
+    <div className="book-shelf-changer">
+      <select onChange={handleChange} defaultValue={currentShelf}>
+        <option value="move" disabled>
+          Move to...
+        </option>
+        <option value="currentlyReading">Currently Reading</option>
+        <option value="wantToRead">Want to Read</option>
+        <option value="read">Read</option>
+        <option value="none">None</option>
+      </select>
+    </div>
+  );
+};
+export default ChangeShelf;

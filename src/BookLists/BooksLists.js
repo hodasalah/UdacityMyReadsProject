@@ -1,20 +1,21 @@
-import React, { Component } from 'react'
+import React from "react";
 
-import SearchButton from './SearchButton'
-import BookShelves from './BookShelves/BookShelves';
-import Nav from '../Nav';
+import SearchButton from "./SearchButton";
+import BookShelves from "./BookShelves/BookShelves";
+import Nav from "../Nav";
 
-class BooksLists extends Component {
-     
-    render() {
-        const {shelves ,books , onChangeShelf} = this.props;
-        return (
-            <div className="list-books">
-                <Nav/>
-                <BookShelves shelvesSections={shelves} books={books} onChangeShelf={onChangeShelf}/>
-                <SearchButton />
-            </div>
-        )
-    }
-}
+const BooksLists = (props) => {
+  const { shelves, books, onChangeShelf } = props;
+  return (
+    <div className="list-books">
+      <Nav />
+      <BookShelves
+        shelvesSections={shelves}
+        books={books}
+        onChangeShelf={onChangeShelf}
+      />
+      <SearchButton />
+    </div>
+  );
+};
 export default BooksLists;
