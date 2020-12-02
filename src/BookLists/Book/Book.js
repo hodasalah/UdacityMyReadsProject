@@ -4,10 +4,8 @@ import ChangeShelf from "./ChangeShelf";
 
 const Book = (props) => {
   const { book, shelf, changeShelf } = props;
-  let background = `url(${book.imageLinks.thumbnail})`
-    if(!book.imageLinks.thumbnail || book.imageLinks.thumbnail===undefined){
-      background=`url(./bg.png)`;
-    }
+  
+    const background = `url(${book.imageLinks ? book.imageLinks.thumbnail : './bg.png'})`;
   
   return (
     <li>
