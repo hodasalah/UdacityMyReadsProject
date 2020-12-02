@@ -3,7 +3,7 @@ import React from "react";
 const ChangeShelf = (props) => {
   const { onShelf, books, book } = props;
   const handleChange = (e) => {
-    onShelf(this.props.book, e.target.value);
+    onShelf(book, e.target.value);
   };
 
   let currentShelf = "none";
