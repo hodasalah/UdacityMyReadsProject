@@ -1,18 +1,19 @@
 import React from 'react'
 import Book from './../BookLists/Book/Book';
 const SearchResults=(props)=> {
+  const{newBooks , books ,onChangeShelf}=props
     return (
         <div className="search-books-results">
-          {props.newBooks.length > 0 ? (
+          {newBooks.length > 0 ? (
             <React.Fragment>
-              <h3>we Found {props.newBooks.length} books </h3>
+              <h3>we Found {newBooks.length} books </h3>
               <ol className="books-grid" >
-                {props.newBooks.map(book=>(
+                {newBooks.map(book=>(
                     <Book 
                     key={book.id} 
                     book={book} 
-                    books={props.books}
-                    changeShelf={props.onChangeShelf}
+                    books={books}
+                    changeShelf={onChangeShelf}
                   />  
                 ))}
               </ol>
